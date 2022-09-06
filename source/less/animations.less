@@ -1,0 +1,60 @@
+@keyframes articles-menu-opening {
+  to {
+    left: 0;
+    width: 295px;
+  }
+}
+
+@keyframes articles-menu-closing {
+  to {
+    left: -320px;
+    width: 0;
+  }
+}
+
+.articles-menu-opening {
+  left: -320px;
+  /* stylelint-disable-next-line declaration-no-important */
+  width: 0 !important;
+  position: relative;
+  animation-name: articles-menu-opening;
+  animation-duration: 1.6s;
+  animation-fill-mode: forwards;
+}
+
+.articles-menu-closing {
+  left: 0;
+  position: relative;
+  animation-name: articles-menu-closing;
+  animation-duration: 1.6s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes articles-button-open {
+  from {
+    background: url("../img/open-menu-button.svg") no-repeat center;
+  }
+
+  to {
+    background: url("../../../img/articlesButtonMenuActive.svg") no-repeat center;
+  }
+}
+
+@keyframes articles-button-close {
+  to {
+    background: url("../img/open-menu-button.svg") no-repeat center;
+  }
+}
+
+.articles-menu-button-open {
+  animation-name: articles-button-open;
+  animation-duration: 1.6s;
+  animation-fill-mode: forwards;
+}
+
+.articles-menu-button-close {
+  animation-name: articles-button-close;
+  animation-duration: 1.6s;
+  animation-fill-mode: forwards;
+}
