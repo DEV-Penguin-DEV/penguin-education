@@ -1,7 +1,11 @@
 @keyframes articles-menu-opening {
+  from {
+    width: 0;
+  }
+
   to {
     left: 0;
-    width: 295px;
+    width: @articles-menu-width;
   }
 }
 
@@ -15,7 +19,7 @@
 .articles-menu-opening {
   left: -320px;
   /* stylelint-disable-next-line declaration-no-important */
-  width: 0 !important;
+  width: 0;
   position: relative;
   animation-name: articles-menu-opening;
   animation-duration: 1.6s;

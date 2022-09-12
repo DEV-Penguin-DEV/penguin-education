@@ -1,14 +1,8 @@
-// Articles Menu's styles
-const buttonElements = document.querySelectorAll('.articles-menu__button');
-const iconElements = document.querySelectorAll('.articles-menu__icon');
+import { getNameForServer } from "./utils.js";
 
-// Articles Menu's opening
-const buttonElement = document.querySelector('.nav__button');
-const articlesMenuElement = document.querySelector('.articles-menu');
-
-const articlesMenuStyles = () => {
+const articlesMenuStyles = (buttonElements, iconElements) => {
   buttonElements.forEach((button, i) => {
-    const elementName = button.textContent.toLocaleLowerCase().replace(/ /ig, '-')
+    const elementName = getNameForServer(button.textContent);
     const className = 'articles-menu__button--' + elementName;
     button.classList.add(className)
 
@@ -16,7 +10,7 @@ const articlesMenuStyles = () => {
   });
 }
 
-const startArticlesMenuButton = () => {
+const startArticlesMenuButton = (buttonElement, articlesMenuElement) => {
   buttonElement.addEventListener('click', () => {
     if(!(articlesMenuElement.classList.contains('open'))) {
       articlesMenuElement.classList.remove('articles-menu-closing');

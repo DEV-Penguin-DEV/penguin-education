@@ -1,4 +1,6 @@
-import {articlesMenuStyles, startArticlesMenuButton} from './articles-menu-styles.js';
+import Presenter from './presenter/presenter.js';
+import Model from './model/model.js';
 
-articlesMenuStyles();
-startArticlesMenuButton();
+const model = new Model();
+const mainPresenter = new Presenter(model.articlesMenuItems);
+mainPresenter.init();
