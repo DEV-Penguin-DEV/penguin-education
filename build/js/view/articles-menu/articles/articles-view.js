@@ -1,6 +1,7 @@
 import { createElement } from '../../render.js';
 
 
+
 export default class ArticleTopicsView {
   #element = null;
   #template = null;
