@@ -32,7 +32,7 @@ const generateArticlesMenuElements = (data) => {
     if (data[key].length > 0) {
       data[key].forEach((element) => {
         const buttonElement = getButtonContainerElement(element);
-        buttonElement.querySelector('.articles-page__button').style.background = `url("../../img/articles-topic/${getNameForServer(element)}.jpeg") no-repeat center`;
+        buttonElement.querySelector('.articles-page__button').style.background = `url("../img/articles-topic/${getNameForServer(element)}.jpeg") no-repeat center`;
         buttonElement.querySelector('.articles-page__button').style.backgroundSize = getNameForServer(element) === 'js' ? 'contain' : `cover`;
         articlesPage.querySelector('.articles-page__buttons-container').append(buttonElement)
       });
