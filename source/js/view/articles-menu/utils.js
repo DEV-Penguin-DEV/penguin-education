@@ -11,7 +11,7 @@ const getButtonContainerElement = (name) => {
   `)
 };
 
-const getTemplate = (key, data) => {
+const getTemplate = (key) => {
   return `
   <div class="articles-page">
     <h3 class="articles-page__title">${key}</h3>
@@ -26,13 +26,13 @@ const getTemplate = (key, data) => {
 const generateArticlesMenuElements = (data) => {
   const result = [];
   for (let key in data) {
-    const template = getTemplate(key, data);
+    const template = getTemplate(key);
     const articlesPage = createElement(template);
     articlesPage.classList.add(key);
     if (data[key].length > 0) {
       data[key].forEach((element) => {
         const buttonElement = getButtonContainerElement(element);
-        buttonElement.querySelector('.articles-page__button').style.background = `url("../img/articles-topic/${getNameForServer(element)}.jpeg") no-repeat center`;
+        buttonElement.querySelector('.articles-page__button').style.background = `url("img/articles-topic/${getNameForServer(element)}.jpeg") no-repeat center`;
         buttonElement.querySelector('.articles-page__button').style.backgroundSize = getNameForServer(element) === 'js' ? 'contain' : `cover`;
         articlesPage.querySelector('.articles-page__buttons-container').append(buttonElement)
       });
