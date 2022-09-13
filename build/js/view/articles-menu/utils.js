@@ -39,7 +39,6 @@ const generateArticlesMenuElements = (data) => {
     }
     const articleBlockView = new ArticleTopicsView(articlesPage);
     result.push(articleBlockView.template);
-
   }
   return result;
 
